@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,7 +11,7 @@
  * @author alunocmc
  */
 public class FormProduto extends javax.swing.JFrame {
-
+    Produto pt = new Produto();
     /**
      * Creates new form FormProduto
      */
@@ -25,21 +28,218 @@ public class FormProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        textoDescricao = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        textoValorCompra = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        textoValorVenda = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        textoQuantidadeEstoque = new javax.swing.JTextField();
+        BotaoCadastrar = new javax.swing.JButton();
+        BotaoExibir = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        textoQuantidadeParaVender = new javax.swing.JTextField();
+        BotaoVender = new javax.swing.JButton();
+        BotaoSair = new javax.swing.JButton();
+        BotaoTOTALVENDAS = new javax.swing.JButton();
+        textTotalVendas = new javax.swing.JTextField();
+        BotaoLimprarCampos = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Dados para a compra do produto");
+
+        jLabel2.setText("Descrição:");
+
+        jLabel3.setText("Valor de Compra:");
+
+        jLabel4.setText("Valor de Venda:");
+
+        jLabel5.setText("Quantidade em Estoque:");
+
+        BotaoCadastrar.setText("CADASTRAR");
+        BotaoCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoCadastrarActionPerformed(evt);
+            }
+        });
+
+        BotaoExibir.setText("EXIBIR");
+        BotaoExibir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoExibirActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Quantidade de pordutos à vender:");
+
+        BotaoVender.setText("VENDER");
+        BotaoVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoVenderActionPerformed(evt);
+            }
+        });
+
+        BotaoSair.setText("SAIR");
+        BotaoSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoSairActionPerformed(evt);
+            }
+        });
+
+        BotaoTOTALVENDAS.setText("TOTAL VENDAS");
+        BotaoTOTALVENDAS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoTOTALVENDASActionPerformed(evt);
+            }
+        });
+
+        BotaoLimprarCampos.setText("LIMPAR CAMPOS");
+        BotaoLimprarCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoLimprarCamposActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(59, 59, 59)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(textoDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textoValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textoQuantidadeEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textoValorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(BotaoCadastrar)
+                                .addGap(44, 44, 44)
+                                .addComponent(BotaoExibir))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(textoQuantidadeParaVender, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(BotaoTOTALVENDAS)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(textTotalVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(BotaoVender)))
+                        .addGap(0, 14, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BotaoLimprarCampos)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotaoSair)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(textoDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotaoCadastrar)
+                    .addComponent(BotaoExibir))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(textoValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(textoQuantidadeEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoValorVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoQuantidadeParaVender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoVender)
+                    .addComponent(jLabel6))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textTotalVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoTOTALVENDAS))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotaoSair, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotaoLimprarCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
+        // Botao Cadastrar:
+        pt.descricao = this.textoDescricao.getText();
+        JOptionPane.showMessageDialog(null, "Cadastro Realizado com sucesso!");
+        //limpando os campos de texto
+        this.textoDescricao.setText("");
+    }//GEN-LAST:event_BotaoCadastrarActionPerformed
+
+    private void BotaoExibirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExibirActionPerformed
+        // BotãoExibir:
+        this.textoDescricao.setText(pt.descricao);
+        this.textoValorCompra.setText(""+pt.vl_compra);
+        this.textoQuantidadeEstoque.setText(""+pt.estoque);
+        this.textoValorVenda.setText(""+pt.vl_venda);
+    }//GEN-LAST:event_BotaoExibirActionPerformed
+
+    private void BotaoVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVenderActionPerformed
+        // Botao Vender:
+        pt.EfeturarVenda(Integer.parseInt(this.textoQuantidadeParaVender.getText()));
+        double vt = pt.vl_venda*Integer.parseInt(this.textoQuantidadeParaVender.getText());
+        pt.CalcularVendas(vt);
+    }//GEN-LAST:event_BotaoVenderActionPerformed
+
+    private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
+        // Botao Sair:
+        System.exit(0);
+    }//GEN-LAST:event_BotaoSairActionPerformed
+
+    private void BotaoLimprarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoLimprarCamposActionPerformed
+        // Botao Limpar Campos:
+        //zerando os campos de texto
+        this.textoDescricao.setText("");
+        this.textoValorCompra.setText("");
+        this.textoValorVenda.setText("");
+        this.textTotalVendas.setText("");
+        this.textoQuantidadeEstoque.setText("");
+        this.textoQuantidadeParaVender.setText("");
+    }//GEN-LAST:event_BotaoLimprarCamposActionPerformed
+
+    private void BotaoTOTALVENDASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoTOTALVENDASActionPerformed
+        // Botão TOTAL VENDAS:
+        this.textTotalVendas.setText(""+pt.TotalVendas());
+    }//GEN-LAST:event_BotaoTOTALVENDASActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +277,23 @@ public class FormProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoCadastrar;
+    private javax.swing.JButton BotaoExibir;
+    private javax.swing.JButton BotaoLimprarCampos;
+    private javax.swing.JButton BotaoSair;
+    private javax.swing.JButton BotaoTOTALVENDAS;
+    private javax.swing.JButton BotaoVender;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField textTotalVendas;
+    private javax.swing.JTextField textoDescricao;
+    private javax.swing.JTextField textoQuantidadeEstoque;
+    private javax.swing.JTextField textoQuantidadeParaVender;
+    private javax.swing.JTextField textoValorCompra;
+    private javax.swing.JTextField textoValorVenda;
     // End of variables declaration//GEN-END:variables
 }
