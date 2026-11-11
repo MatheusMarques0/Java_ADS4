@@ -1,18 +1,22 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
 /**
  *
  * @author renat
  */
-public class FormProati extends javax.swing.JPanel {
+public class FormProati extends javax.swing.JFrame {
+    ControleAparelho controle = new ControleAparelho();
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormProati.class.getName());
 
     /**
      * Creates new form FormProati
      */
     public FormProati() {
+        controle.Conectar();
         initComponents();
     }
 
@@ -25,19 +29,284 @@ public class FormProati extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        CampoNS = new javax.swing.JTextField();
+        CampoNumeracao = new javax.swing.JTextField();
+        CampoAntecedente = new javax.swing.JTextField();
+        CampoAparelho = new javax.swing.JTextField();
+        CampoValidade = new javax.swing.JTextField();
+        CampoEstado = new javax.swing.JTextField();
+        BotaoExcluir = new javax.swing.JButton();
+        BotaoEditar = new javax.swing.JButton();
+        BotaoListarAparelhosProati = new javax.swing.JButton();
+        BotaoCadastrar1 = new javax.swing.JButton();
+        BotaoConsultar = new javax.swing.JButton();
+        BotaoVoltarProati = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Você está no modo PROATI!");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("você pode criar e editar as entradas no Banco de dados!");
+
+        jLabel3.setText("Tipo de Aparelho:");
+
+        jLabel4.setText("Número de Série:");
+
+        jLabel5.setText("Antecedente:");
+
+        jLabel6.setText("Numeração: ");
+
+        jLabel7.setText("Estado do aparelho:");
+
+        jLabel8.setText("Validade: ");
+
+        BotaoExcluir.setText("EXCLUIR APARELHO");
+        BotaoExcluir.addActionListener(this::BotaoExcluirActionPerformed);
+
+        BotaoEditar.setText("EDITAR APARELHO");
+        BotaoEditar.addActionListener(this::BotaoEditarActionPerformed);
+
+        BotaoListarAparelhosProati.setText("MOSTRAR TODOS APARELHOS");
+        BotaoListarAparelhosProati.addActionListener(this::BotaoListarAparelhosProatiActionPerformed);
+
+        BotaoCadastrar1.setText("CADASTRAR NOVO APARELHO");
+        BotaoCadastrar1.addActionListener(this::BotaoCadastrar1ActionPerformed);
+
+        BotaoConsultar.setText("CONSULTAR APARELHO");
+        BotaoConsultar.addActionListener(this::BotaoConsultarActionPerformed);
+
+        BotaoVoltarProati.setText("SAIR");
+        BotaoVoltarProati.addActionListener(this::BotaoVoltarProatiActionPerformed);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BotaoEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotaoCadastrar1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BotaoListarAparelhosProati, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                    .addComponent(BotaoExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoValidade, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CampoAntecedente, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CampoNumeracao, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CampoNS, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CampoAparelho, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CampoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(62, 76, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(BotaoConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(214, 214, 214))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(BotaoVoltarProati)
+                        .addGap(17, 17, 17))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(CampoAparelho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CampoNS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(CampoNumeracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(CampoAntecedente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(CampoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8))
+                    .addComponent(CampoValidade, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotaoExcluir)
+                    .addComponent(BotaoCadastrar1))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotaoListarAparelhosProati)
+                    .addComponent(BotaoEditar))
+                .addGap(32, 32, 32)
+                .addComponent(BotaoConsultar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(BotaoVoltarProati)
+                .addContainerGap())
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BotaoCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrar1ActionPerformed
+        // Botão cadastrar
+        String TipoAparelho=this.CampoAparelho.getText();
+        String NSAparelho=this.CampoNS.getText();
+        int NumeracaoAparelho=Integer.parseInt(this.CampoNumeracao.getText());
+        String AntecedenteAparelho=this.CampoAntecedente.getText();
+        String EstadoAparelho=this.CampoEstado.getText();
+        String ValidadeAparelho=this.CampoValidade.getText();
+        //chamando o cadastrar
+        controle.Cadastrar(TipoAparelho, NSAparelho, NumeracaoAparelho, AntecedenteAparelho, EstadoAparelho, ValidadeAparelho);
+        //limpando os campos
+        this.CampoAparelho.setText("");
+        this.CampoNS.setText("");
+        this.CampoNumeracao.setText("");
+        this.CampoAntecedente.setText("");
+        this.CampoEstado.setText("");
+        this.CampoValidade.setText("");
+    }//GEN-LAST:event_BotaoCadastrar1ActionPerformed
+
+    private void BotaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExcluirActionPerformed
+        // Botão Excluir
+        String NSaparelho=this.CampoNS.getText();
+        controle.Excluir(NSaparelho);
+        this.CampoNS.setText("");
+    }//GEN-LAST:event_BotaoExcluirActionPerformed
+
+    private void BotaoEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEditarActionPerformed
+        // Botão Editar
+        String NSaparelho=this.CampoNS.getText();
+        String TipoAparelho=this.CampoAparelho.getText();
+        int NumeracaoAparelho=Integer.parseInt(this.CampoNumeracao.getText());
+        String AntecedenteAparelho=this.CampoAntecedente.getText();
+        String EstadoAparelho=this.CampoEstado.getText();
+        String ValidadeAparelho=this.CampoValidade.getText();
+        controle.Alterar(TipoAparelho, NSaparelho, NumeracaoAparelho,
+    AntecedenteAparelho, EstadoAparelho, ValidadeAparelho);
+        //limpando texto
+        this.CampoNS.setText("");
+        this.CampoAparelho.setText("");
+        this.CampoNumeracao.setText("");
+        this.CampoAntecedente.setText("");
+        this.CampoEstado.setText("");
+        this.CampoValidade.setText("");
+    }//GEN-LAST:event_BotaoEditarActionPerformed
+
+    private void BotaoListarAparelhosProatiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoListarAparelhosProatiActionPerformed
+        // Botão Listar:
+        controle.ListarTodos();
+    }//GEN-LAST:event_BotaoListarAparelhosProatiActionPerformed
+
+    private void BotaoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoConsultarActionPerformed
+        // Botão Consultar
+        String NumSerie=this.CampoNS.getText();
+        String dados = controle.Consultar(NumSerie);
+        if (!dados.equals("")){
+        String[] info = dados.split(";");
+        this.CampoAparelho.setText(info[0]);
+        this.CampoNumeracao.setText(""+info[1]);
+        this.CampoAntecedente.setText(""+info[2]);
+        this.CampoEstado.setText(""+info[3]);
+        this.CampoValidade.setText(""+info[4]);
+        }
+        //limpando campo
+        else{
+        this.CampoNS.setText("");
+        }
+    }//GEN-LAST:event_BotaoConsultarActionPerformed
+
+    private void BotaoVoltarProatiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVoltarProatiActionPerformed
+        // Botão voltar Formulário Aparelho
+        new FormEscola().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BotaoVoltarProatiActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new FormProati().setVisible(true));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoCadastrar1;
+    private javax.swing.JButton BotaoConsultar;
+    private javax.swing.JButton BotaoEditar;
+    private javax.swing.JButton BotaoExcluir;
+    private javax.swing.JButton BotaoListarAparelhosProati;
+    private javax.swing.JButton BotaoVoltarProati;
+    private javax.swing.JTextField CampoAntecedente;
+    private javax.swing.JTextField CampoAparelho;
+    private javax.swing.JTextField CampoEstado;
+    private javax.swing.JTextField CampoNS;
+    private javax.swing.JTextField CampoNumeracao;
+    private javax.swing.JTextField CampoValidade;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

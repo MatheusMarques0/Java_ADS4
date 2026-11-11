@@ -1,18 +1,22 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
 /**
  *
  * @author renat
  */
-public class FormDirecao extends javax.swing.JPanel {
+public class FormDirecao extends javax.swing.JFrame {
+    ControleAparelho controle = new ControleAparelho();
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FormDirecao.class.getName());
 
     /**
      * Creates new form FormDirecao
      */
     public FormDirecao() {
+        controle.Conectar();
         initComponents();
     }
 
@@ -25,19 +29,179 @@ public class FormDirecao extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        BotaoListarAparelhosDirecao = new javax.swing.JButton();
+        BotaoFuncionando = new javax.swing.JButton();
+        BotaoTablet1 = new javax.swing.JButton();
+        BotaoNotebook = new javax.swing.JButton();
+        BotaoManutencao = new javax.swing.JButton();
+        BotaoQuebrados = new javax.swing.JButton();
+        BotaoTotalAparelhos = new javax.swing.JButton();
+        BotaoSair = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Você está no modo DIREÇÃO!");
+
+        jLabel2.setText("Você pode vizualiar os dispositivos e utilziar filtros!");
+
+        BotaoListarAparelhosDirecao.setText("MOSTRAR TODOS APARELHOS");
+        BotaoListarAparelhosDirecao.addActionListener(this::BotaoListarAparelhosDirecaoActionPerformed);
+
+        BotaoFuncionando.setText("MOSTRAR TODOS OS APARELHOS FUNCIONADO");
+        BotaoFuncionando.addActionListener(this::BotaoFuncionandoActionPerformed);
+
+        BotaoTablet1.setText("MOSTRAR TODOS OS TABLETS OPERANDO");
+        BotaoTablet1.addActionListener(this::BotaoTablet1ActionPerformed);
+
+        BotaoNotebook.setText("MOSTRAR TODOS OS NOTEBOOKS OPERANDO");
+        BotaoNotebook.addActionListener(this::BotaoNotebookActionPerformed);
+
+        BotaoManutencao.setText("MOSTRAR TODOS OS APARELHOS EM MANUTENÇÃO");
+        BotaoManutencao.addActionListener(this::BotaoManutencaoActionPerformed);
+
+        BotaoQuebrados.setText("MOSTRAR TODOS OS APARELHOS QUEBRADOS");
+        BotaoQuebrados.addActionListener(this::BotaoQuebradosActionPerformed);
+
+        BotaoTotalAparelhos.setText("MOSTRAR TOTAL DE APARELHOS FUNCIONAIS");
+        BotaoTotalAparelhos.addActionListener(this::BotaoTotalAparelhosActionPerformed);
+
+        BotaoSair.setText("Sair");
+        BotaoSair.addActionListener(this::BotaoSairActionPerformed);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(78, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(BotaoTablet1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotaoListarAparelhosDirecao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotaoFuncionando, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotaoNotebook, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotaoManutencao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotaoQuebrados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BotaoTotalAparelhos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(97, 97, 97))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(BotaoSair)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BotaoListarAparelhosDirecao, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoFuncionando, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoTablet1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoNotebook, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoManutencao, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoQuebrados, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoTotalAparelhos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(BotaoSair)
+                .addGap(16, 16, 16))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BotaoListarAparelhosDirecaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoListarAparelhosDirecaoActionPerformed
+        // Botão Listar:
+        controle.ListarTodos();
+    }//GEN-LAST:event_BotaoListarAparelhosDirecaoActionPerformed
+
+    private void BotaoFuncionandoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoFuncionandoActionPerformed
+        // Botão Funcionadno
+        controle.ListarFuncionando();
+    }//GEN-LAST:event_BotaoFuncionandoActionPerformed
+
+    private void BotaoNotebookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNotebookActionPerformed
+        // Botão Notebook
+        controle.ListarNotebooksFuncionando();
+    }//GEN-LAST:event_BotaoNotebookActionPerformed
+
+    private void BotaoManutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoManutencaoActionPerformed
+        // Botão Manutenção
+        controle.ListarManutencao();
+    }//GEN-LAST:event_BotaoManutencaoActionPerformed
+
+    private void BotaoQuebradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoQuebradosActionPerformed
+        // Botão quebrados
+        controle.ListarQuebrados();
+    }//GEN-LAST:event_BotaoQuebradosActionPerformed
+
+    private void BotaoSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSairActionPerformed
+        // Botão voltar Formulário ESCOLA
+        new FormEscola().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BotaoSairActionPerformed
+
+    private void BotaoTablet1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoTablet1ActionPerformed
+        // Botão tablet
+        controle.ListarTabletsFuncionando();
+    }//GEN-LAST:event_BotaoTablet1ActionPerformed
+
+    private void BotaoTotalAparelhosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoTotalAparelhosActionPerformed
+        //botao Totalquebrados
+        controle.TotalFuncionando();
+    }//GEN-LAST:event_BotaoTotalAparelhosActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new FormDirecao().setVisible(true));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoFuncionando;
+    private javax.swing.JButton BotaoListarAparelhosDirecao;
+    private javax.swing.JButton BotaoManutencao;
+    private javax.swing.JButton BotaoNotebook;
+    private javax.swing.JButton BotaoQuebrados;
+    private javax.swing.JButton BotaoSair;
+    private javax.swing.JButton BotaoTablet1;
+    private javax.swing.JButton BotaoTotalAparelhos;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
